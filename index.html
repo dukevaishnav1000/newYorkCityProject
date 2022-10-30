@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <link rel="stylesheet" href="new_yorkHomePage.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -33,4 +33,32 @@
             </div>
         </div>
     </body>
+</html> -->
+
+<html>
+    <head>
+        
+    </head>
+    <body>
+
+        <div class="displayData">
+
+        </div>
+
+        <script>
+            
+            let displayArea=document.getElementsByClassName("displayData");
+            fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=e0d1b5c8f32b46308fead87de8e1bb4a").then((res)=>{
+             return res.json();             
+            },rej=>{
+                console.log("Error while feching: ",rej)
+            }).then(data=>{
+                let {articles}=data;
+                console.log(articles);
+            displayArea[0].innerHTML=JSON.stringify(articles);
+            })
+        </script>
+    </body>
+    
 </html>
+
