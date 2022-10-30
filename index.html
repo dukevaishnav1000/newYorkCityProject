@@ -49,14 +49,17 @@
             
             let displayArea=document.getElementsByClassName("displayData");
             fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=e0d1b5c8f32b46308fead87de8e1bb4a").then((res)=>{
-             return res.json();             
-            },rej=>{
-                console.log("Error while feching: ",rej)
-            }).then(data=>{
-                let {articles}=data;
-                console.log(articles);
-            displayArea[0].innerHTML=JSON.stringify(articles);
+             res.json().then((data)=>{
+                console.log(data);
+             })
+            }).catch((error)=>{
+                console.log(error)
             })
+            // .then(data=>{
+            //     let {articles}=data;
+            //     console.log(articles);
+            // displayArea[0].innerHTML=JSON.stringify(articles);
+            // })
         </script>
     </body>
     
