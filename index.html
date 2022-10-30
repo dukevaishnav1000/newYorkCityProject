@@ -64,9 +64,9 @@
                     })
                     .then(data => {//console.log(data.contents);
                         console.log(data);
-                        let {articles}=data;
+                        let articles=data.contents;
                         console.log(articles);
-                     displayArea[0].innerHTML=JSON.stringify(articles);     
+                     displayArea[0].innerHTML=articles; 
                     });
         </script>
     </body>
