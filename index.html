@@ -57,15 +57,16 @@
             // })
 
 
-            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://newsapi.org/v2/top-headlines?country=us&apiKey=e0d1b5c8f32b46308fead87de8e1bb4a')}`)
+            fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=e0d1b5c8f32b46308fead87de8e1bb4a`)
                     .then(response => {
                       if (response.ok) return response.json()
                       throw new Error('Network response was not ok.')
                     })
                     .then(data => {//console.log(data.contents);
-                        let {articles}=data;
+                        console.log(data);
+                        let articles=data.contents;
                         console.log(articles);
-                     displayArea[0].innerHTML=JSON.stringify(articles);     
+                     displayArea[0].innerHTML=(articles);     
                     });
         </script>
     </body>
