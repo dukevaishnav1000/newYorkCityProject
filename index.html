@@ -62,7 +62,7 @@
                       if (response.ok) return response.json()
                       throw new Error('Network response was not ok.')
                     })
-                    .then(data => {console.log(data.contents);
+                    .then(data => {//console.log(data.contents);
                         let {articles}=data;
                         console.log(articles);
                      displayArea[0].innerHTML=JSON.stringify(articles);     
